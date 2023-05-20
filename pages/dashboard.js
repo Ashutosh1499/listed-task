@@ -23,7 +23,7 @@ import circle3 from '../public/Icons/Ellipse6.svg';
 const Dashboard = () => {
 	const { data: session } = useSession();
 	console.log(session);
-	if (session) {
+	if (session && session.user) {
 		const src = session.user.image;
 	} else {
 		const src = '';
