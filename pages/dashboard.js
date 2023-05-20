@@ -23,10 +23,10 @@ import circle3 from '../public/Icons/Ellipse6.svg';
 const Dashboard = () => {
 	const { data: session } = useSession();
 	console.log(session);
+	let src = '';
 	if (session && session.user) {
-		const src = session.user.image;
+		src += session.user.image;
 	} else {
-		const src = '';
 	}
 	return (
 		<div className={`${styles.dashboardContainer} fb ac jse`}>

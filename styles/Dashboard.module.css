@@ -216,6 +216,21 @@
 		display: none;
 	}
 	.infoTitle {
-		font-size: 0.4rem;
+		font-size: 0.5rem;
+	}
+	.dashboardContainer h3 {
+		font-size: 0.8rem;
+	}
+	.dashboardContainer h4 {
+		font-size: 0.6rem;
+	}
+	.dashboardContainer h5 {
+		font-size: 0.6rem;
+	}
+	.graphInfo span {
+		font-size: 0.6rem;
+	}
+	.meetings p {
+		font-size: 0.6rem;
 	}
 }
