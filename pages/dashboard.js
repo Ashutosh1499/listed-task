@@ -22,7 +22,12 @@ import circle3 from '../public/Icons/Ellipse6.svg';
 
 const Dashboard = () => {
 	const { data: session } = useSession();
-	const src = session.user.image;
+	console.log(session);
+	if (session) {
+		const src = session.user.image;
+	} else {
+		const src = '';
+	}
 	return (
 		<div className={`${styles.dashboardContainer} fb ac jse`}>
 			<div className={`${styles.sideBarWrapper} fb as jc`}>
