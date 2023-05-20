@@ -22,7 +22,7 @@ import circle3 from '../public/Icons/Ellipse6.svg';
 
 const Dashboard = () => {
 	const { data: session } = useSession();
-	// const src = session.user.image;
+	const src = session.user.image;
 	return (
 		<div className={`${styles.dashboardContainer} fb ac jse`}>
 			<div className={`${styles.sideBarWrapper} fb as jc`}>
@@ -62,14 +62,14 @@ const Dashboard = () => {
 					<div className={`${styles.topBarfields} fb ac jc`}>
 						<input type='search' placeholder='Search...' />
 						<Image src={notification} alt='' width={25} height={25} />
-						{/* <Image
+						<Image
 							className={styles.roundImage}
 							loader={() => src}
 							src={src}
 							alt=''
 							width={25}
 							height={25}
-						/> */}
+						/>
 					</div>
 				</div>
 				<div className={`${styles.infoCardsWrapper} fb ac jsb`}>
