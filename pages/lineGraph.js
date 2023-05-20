@@ -2,24 +2,24 @@ import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 export default function Linegraph() {
-	//As I did not find any api related to this work but the implementation will
-	//fetch if proviided with a good api and change the data accordingly.
-	const [data1, setData1] = useState([20, 15, 60, 60, 65, 30, 70]);
-	const [data2, setData2] = useState([0, 59, 75, 20, 20, 55, 40]);
+	const [data1, setData1] = useState([]);
+	const [data2, setData2] = useState([]);
 	const fetchData1 = async () => {
-		let response = await fetch('');
+		let response = await fetch('https://ashutosh.world/randomData.json');
 		response = await response.json();
-		// setData1(response.data1);
+		console.log(data1);
+		setData1(response[0].data1);
 	};
 	const fetchData2 = async () => {
-		let response = await fetch('');
+		let response = await fetch('https://ashutosh.world/randomData.json');
 		response = await response.json();
-		// setData1(response.data1);
+		setData2(response[0].data2);
 	};
 	const canvasEl = useRef(null);
 	useEffect(() => {
-		fetchData1();
-		fetchData1();
+		if (data1.length === 0) fetchData1();
+		if (data2.length === 0) fetchData2();
+		console.log(data1);
 		const ctx = canvasEl.current.getContext('2d');
 		const labels = ['', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'];
 		const data = {
@@ -73,7 +73,7 @@ export default function Linegraph() {
 		return function cleanup() {
 			myLineChart.destroy();
 		};
-	}, [data1, data2, setData1, setData2]);
+	}, [data1, data2]);
 
-	return <canvas id='myChart' ref={canvasEl} />;
+	return <>{data1 !== null ? <canvas id='myChart' ref={canvasEl} /> : ''}</>;
 }

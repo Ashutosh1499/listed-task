@@ -26,7 +26,6 @@ const Dashboard = () => {
 	let src = '';
 	if (session && session.user) {
 		src += session.user.image;
-	} else {
 	}
 	return (
 		<div className={`${styles.dashboardContainer} fb ac jse`}>
